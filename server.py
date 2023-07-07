@@ -11,7 +11,6 @@ mydb = mysql.connector.connect(
 )
 
 mycursor = mydb.cursor()
-mycursor.execute('CREATE TABLE WtAnime (name VARCHAR(255), nrEps VARCHAR(255), score VARCHAR(255), Description TEXT)')
 
 def existInDb(name, db):
     sql = "SELECT * FROM {} WHERE EXISTS (SELECT %s FROM {} WHERE name = %s)".format(db,db)
